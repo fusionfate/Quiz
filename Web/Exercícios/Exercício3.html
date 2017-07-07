@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Exercício3</title>
+	<script type="text/javascript">
+
+		var soma = 0, i = 0, nota = 'n';
+
+		while(true){
+			nota = window.prompt("Digite a nota ou 'y' para sair:");
+			if(nota == 'y'){
+				break;
+			}else{
+				soma = soma + parseInt(nota);
+				i++;
+			}
+		}
+
+		document.writeln('<center><h1> Média:' + (soma/i) + '</h1></center>');
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

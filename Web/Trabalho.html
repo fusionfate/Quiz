@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	
+	<style type="text/css">
+
+		#divquestao{
+			height: 120px;
+		}
+		
+		#botao{
+			border:6px red;
+			width: 20%;
+			height: 60px;
+			border-radius: 20px;
+			text-align: center;
+			cursor: pointer;
+			border-style: outset;
+		}
+
+		form {
+			border:1px black solid;
+			width: 50%;
+			height: 600px;
+		}
+
+		h1{
+			font-size: 35px;
+		}
+
+		h2{
+			font-size: 15px;
+		}
+
+		h3{
+			font-size: 25px;
+			width: 90%;
+		}
+
+		label{
+			visibility: hidden;
+		}
+
+		progress{
+
+x		}
+
+		#progressotexto{
+			color:green;
+		}
+
+		#divalternativas{
+			text-align: left;
+			width: 80%;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+		var perguntas = [
+			'1 - Qual tag é utilizada para incluir uma estilização CSS dentro de um documento HTML?',
+			'2 - Qual a linguagem responsável por deixar o HTML mais dinânimo?',
+			'3 - Qual a linguagem responsável por estilizar o HTML?',
+			'4 - Qual a primeira coisa que é carregada na página HTML?',
+			'5 - Para que serve a tag body?',
+			'6 - Qual o tipo da tag input em que o usuário pode marcar somente uma opção?',
+			'7 - Qual o tipo da tag input em que o usuário tem somente duas opções (true ou false) ?',
+			'8 - Qual o servidor mais usado para sites HTML?',
+			'9 - ',
+			'10 - Questão 10'
+		];
+
+		var respostas = [
+			'Style',
+			'JavaScript',
+			'CSS',
+			'A tag head',
+			'A tag body é o corpo da página',
+			'Radio',
+			'CheckBox',
+			'Apache',
+			'',
+			'Resposta10'
+		];
+
+		var alternativas = [
+			'CSS',respostas[0],'Head','Meta','Script',
+			'Style','JavaScript','CSS','PHP','HTML',
+			'JavaScript','PHP','CSS','HTML','SQL',
+			'A tag body','A tag title','A tag html','A tag meta','A tag head',
+			'A tag body é o corpo da página','22','23','24','25',
+			'26','27','28','29','Radio',
+			'31','32','CheckBox','34','35',
+			'36','37','38','Apache','40',
+			'41','42','43','44','45',
+			'46','Resposta10','48','49','50'
+		];
+
+		var progresso = 0;
+		var acertos = 0;
+		var respostaencontrada = true;
+
+		function Animacao(){
+			document.getElementById("botao").style.background = 'whitesmoke';
+			document.getElementById("botao").style.border = 'inset 6px red';
+		}
+
+		function Animacao2(){
+			document.getElementById("botao").style.background = 'white';
+			document.getElementById("botao").style.border = 'outset 6px red';
+		}
+
+		function Enviar(){
+
+			document.getElementById("progressotexto").style.color = 'green';
+			var radios = document.getElementsByName("Resposta");
+			document.getElementById("question").style.color = 'black';
+			document.getElementById("botao").innerHTML = '<br/> Avançar';
+
+			for (var i = 0; i < 5; i++) {
+				if (radios[i].checked == true){
+					respostaencontrada = true;
+				}
+			}
+
+			if(respostaencontrada){
+
+				respostaencontrada = false;
+
+				document.getElementById("botao").innerHTML = '<br/> Avançar';
+
+				for (var i = 0; i < 5; i++) {
+					if (radios[i].checked == true){
+						document.getElementById("acertotexto").innerHTML = respostas[i];
+						document.getElementById("progressotexto").innerHTML = radios[i].value ;
+						if(radios[i].value == respostas[i]){
+								acertos++;
+						}
+						document.getElementById("acertotexto").innerHTML = ("Acertos:" + acertos);
+					}
+					document.getElementById("Alternativa" + (i+1)).style.visibility = 'visible';
+					document.getElementById("Alternativa" + (i+1)).innerHTML = ('<input type="radio" value=" <br/>' + alternativas[((progresso+1)*5) - 5 + i] + '" name="Resposta"/>' + alternativas[((progresso+1)*5) - 5 + i]);
+				}
+
+				if(progresso == 9){
+					document.getElementById("question").innerHTML = perguntas[progresso];
+					document.getElementById("botao").innerHTML = '<br/> Concluir';
+					progresso++;
+					document.getElementById("progressotexto").innerHTML = ("Pergunta " + progresso + " de 10.");
+					document.getElementById("barra").value = document.getElementById("barra").value + 1;
+
+				}else if(progresso == 10){
+
+					//Vai mostrar o resutado
+
+					progresso = 0;
+					document.getElementById("botao").innerHTML = '<br/> Tentar Novamente';
+
+					for (var i = 1; i < 6; i++) {
+						document.getElementById("Alternativa" + i).style.visibility = 'hidden';
+					}
+
+					if(acertos > 7 ){
+						document.getElementById("question").style.color = 'green';
+						document.getElementById("question").innerHTML = 'Uau! Você parece dominar o assunto! ^^';
+					}else if( acertos > 4 && acertos < 8){
+						document.getElementById("question").style.color = 'yellow';
+						document.getElementById("question").innerHTML = 'Parabéns! Acertou várias! Estude mais e melhore seus resultados :)';
+					}else if( acertos > 1 && acertos < 5){
+						document.getElementById("question").style.color = 'orange';
+						document.getElementById("question").innerHTML = 'Você tem potencial! Mas é preciso estudar mais para superar suas dificuldades! ;)';
+					}else{
+						document.getElementById("question").style.color = 'red';
+						document.getElementById("question").innerHTML = 'Você pode não ter tido um bom desempenho dessa vez mas não desista! Persevere nos estudos! :*';
+					}
+
+					document.getElementById("resultado").innerHTML = ('<table style="border:1px solid black">'); 
+
+					for (var i = 0; i < 10; i++) {
+						document.getElementById("resultado").innerHTML = ('<tr> <td>' + perguntas[i] + '</td> <td> ' + respostas[i] + '</td> <td> o que o usuario digitou </td> </tr>');
+					}
+
+					document.getElementById("resultado").innerHTML = ('</table>');
+					document.getElementById("progressotexto").innerHTML = ("Completado!");
+					progresso = 0;
+
+				}else{
+					document.getElementById("question").innerHTML = perguntas[progresso];
+					progresso++;
+					document.getElementById("progressotexto").innerHTML = ("Pergunta " + progresso + " de 10.");
+					document.getElementById("barra").value = document.getElementById("barra").value + 1;
+				}
+
+			}else{
+				document.getElementById("progressotexto").innerHTML = 'Selecione uma resposta!';
+				document.getElementById("progressotexto").style.color = 'red';
+			}
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<center>
+	
+		<form>
+			<h1> Quiz! </h1>
+			<div id="resultado"> </div>
+			<div id="divquestao"><h3 id="question"> Questões referentes a matéria de WEB e suas linguagens! Clique em Iniciar Quiz para responder as perguntas. </h3></div>
+			<div id="divalternativas">
+				<label id="Alternativa1"> <input type="radio" name="Resposta"/> Alternativa 1  </label><br/>
+				<label id="Alternativa2"> <input type="radio" name="Resposta"/> Alternativa 2  </label><br/>
+				<label id="Alternativa3"> <input type="radio" name="Resposta"/> Alternativa 3  </label><br/>
+				<label id="Alternativa4"> <input type="radio" name="Resposta"/> Alternativa 4  </label><br/>
+				<label id="Alternativa5"> <input type="radio" name="Resposta"/> Alternativa 5  </label><br/><br/><br/>
+			</div>
+			<div type="submit" onmousedown="Animacao()" onmouseup="Animacao2()" id="botao" onclick="Enviar()"> <br/> Iniciar Quiz! </div><br/><br/><br/>
+			<p id="acertotexto">Acertos: </p>
+			<p id="progressotexto">Progresso: </p>
+			<progress id="barra" value="0" max="10"/>
+			<br/><br/><br/>
+		</form>
+
+
+		<br/>
+		
+	</center>
+</body>
+</html>

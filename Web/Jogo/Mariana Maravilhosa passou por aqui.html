@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title></title>
+
+		<script type="text/javascript">
+
+			var num=0, contador=0; 
+
+			function Rolar_Dado() {
+
+			 	var dado1, dado2;
+			 	dado1= Math.floor((Math.random()*6)+1);
+			 	dado2= Math.floor((Math.random()*6)+1);
+
+			 	var soma = dado1 + dado2;
+
+			 	document.getElementById("dado1").innerHTML = "Dado 1:";
+			 	document.getElementById("dado2").innerHTML = "Dado 2:";
+
+			 	document.write("<center>" + soma + "</center");
+
+
+				if(contador=0){
+
+			 		if( soma== 7 || soma==11){
+			 			document.getElementById("resultado").innerHTML= "vc ganhou !! :D ";
+			 			contador=0;
+			 		}
+			 		else if( soma== 3 || soma==2 ){
+			 			document.getElementById("resultado").innerHTML= "vc perdeu !! :D ";
+			 			contador=0;
+			 		}
+			 		else if( soma==4 ){
+			 			document.getElementById("resultado").innerHTML= "role o dado novamente ";
+			 			num=4;
+			 		}
+			 
+			 		else if( soma==5 ){
+			 			document.getElementById("resultado").innerHTML= "role o dado novamente ";
+			 		num=5;
+			 		}
+
+			 		else if( soma==6 ){
+			 			document.getElementById("resultado").innerHTML= "role o dado novamente ";
+			 			num=6;
+			 		}
+
+			 		else if( soma==8 ){
+			 			document.getElementById("resultado").innerHTML= "role o dado novamente ";
+			 			num=8;
+			 		}
+
+			 		else if( soma==9 ){
+			 			document.getElementById("resultado").innerHTML= "role o dado novamente ";
+			 			num=9;
+			 		}
+			 		else if( soma==10 ){
+			 			document.getElementById("resultado").innerHTML= "role o dado novamente ";
+			 			num=10;
+			 		}
+
+			 }else if(contador>0){
+
+			 			if(soma==num){
+			 				document.getElementById("resultado").innerHTML= "vc ganhou !! :D ";
+			 				contador=0;
+			 			}
+
+			 			if(soma=7){
+			 				document.getElementById("resultado").innerHTML= "vc perdeu !! :D ";
+			 			
+			 			}
+
+					document.getElementById("resultado").innerHTML="Você tiro >>>>"+soma;
+			 					 			
+			 		}
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<center>
+
+				<input type="button" id="button" value="Rolar Dado" onclick="Rolar_Dado()"/>
+				<div id="dado1"> asdfasdf </div>
+				<div id="dado2"> asdfasdf </div>
+				<div id="resultado"> asdfasdf </div>
+
+		</center>	
+
+	</body>
+
+</html>
