@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+
+		<title>Quiz!</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		<link rel="stylesheet" href="Css/Css.css" type="text/css"/>
+
+		<script type="text/javascript" src="JavaScript/JavaScript.js"></script> 
+
+	</head>
+
+	<body>
+
+			<br/>
+
+			<div id="wallpaper"> < body backgroud:"wallpaper.jpg"> <br/><br/><br/>
+								 function Quiz(Usuário){<br/><br/><br/>
+								 var Respostas = Usuário.resposta;<br/><br/>
+								 var Inteligencia = Usuário.acertos;<br/><br/><br/>
+								 } <br/><br/><br/>	
+								 < questões quantidade="10"/> <br/><br/><br/>
+								 < matéria tipo="WEB"/> <br/><br/><br/>
+
+			 </div>
+
+			<center>
+
+			<form method="" id="Formulario">
+				<h1> Quiz! </h1>
+				<div id="Resultado"> </div>
+				<div id="DivQuestao"><h3 id="Questao"> Questões referentes a matéria de WEB e suas linguagens! Clique em Iniciar Quiz para responder as perguntas. </h3></div>
+				<div id="DivAlternativas">
+					<label id="Alternativa1"> <input type="radio" name="Resposta"/> Alternativa 1  </label><br/>
+					<label id="Alternativa2"> <input type="radio" name="Resposta"/> Alternativa 2  </label><br/>
+					<label id="Alternativa3"> <input type="radio" name="Resposta"/> Alternativa 3  </label><br/>
+					<label id="Alternativa4"> <input type="radio" name="Resposta"/> Alternativa 4  </label><br/>
+					<label id="Alternativa5"> <input type="radio" name="Resposta"/> Alternativa 5  </label><br/><br/><br/>
+				</div>
+
+				<div type="submit" onmousedown="AnimacaoBotaoInset()" onmouseup="AnimacaoBotaoOutset()" id="Botao" onclick="Enviar()"> Iniciar Quiz! </div>
+
+				<p id="AcertoTexto">Acertos: </p>
+				<p id="ProgressoTexto">Progresso: </p>
+				<div id="Contorno"> </div>
+				<div id="Barra"> </div>
+
+				</div>
+
+				<br/>
+			</form>
+
+
+			<br/>
+			
+		</center>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+		
+
+		#wallpaper{
+			position: absolute;
+			left: 10px;
+			top:50px;
+			color:#309de5;
+			font-size: 20px;
+		}
+
+		#Contorno{
+			position: absolute;
+			left: 540px;
+			top: 540px;
+			border: solid black 4px;
+			width: 20%;
+			height: 40px;
+			border-radius: 20px;
+		}
+
+		#Barra{
+			position: absolute;
+			left: 544px;
+			top: 544px;
+			width: 0%;
+			height: 40px;
+			background: #00d628;
+			border-radius: 18px;
+		}
+
+		body{
+			background: url('Fundo4.jpg');
+		}
+
+		#DivQuestao{
+			height: 120px;
+		}
+		
+		#Botao{
+			border:6px #302c2c;
+			width: 70%;
+			height: 60px;
+			border-radius: 30px;
+			cursor: pointer;
+			border-style: outset;
+			background: #8d968a;
+			color:white;
+			font-size: 20px;
+			vertical-align: middle; 
+			display: table-cell; 
+		}
+
+		form {
+			border:5px #302c2c solid;
+			width: 50%;
+			border-style: inset;
+			height: 600px;
+			background: white;
+			border-radius: 20px;
+		}
+
+		h1{
+			font-size: 35px;
+		}
+
+		h2{
+			font-size: 15px;
+		}
+
+		h3{
+			font-size: 25px;
+			width: 90%;
+		}
+
+		label{
+			visibility: hidden;
+		}
+
+		#ProgressoTexto{
+			color:#00991d;
+			font-size: 20px;
+		}
+
+		#AcertoTexto{
+			color:#00991d;
+			font-size: 20px;
+		}
+
+		#DivAlternativas{
+			text-align: left;
+			width: 90%;
+		}
