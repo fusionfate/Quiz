@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+
+		<title>Quiz!</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		
+		<link rel="stylesheet" href="Css/Css.css" type="text/css"/>
+
+		<script type="text/javascript" src="JavaScript/JavaScript.js"></script> 
+
+	</head>
+
+	<body>
+
+			<br/>
+
+			<center>
+
+				<form method="" id="Formulario">
+					<div id="Resultado"> </div>
+					<br/>
+					<div id="DivQuestao"> <h2 id="Questao">
+
+					 	Quiz referente a matéria de WEB e suas linguagens! Clique em Iniciar Quiz para responder as perguntas. 
+
+					</h2></div>
+
+					<div id="DivTabela">
+
+						
+
+					</div>
+
+					<div id="DivAlternativas">
+
+						<label id="Alternativa1"> <input type="radio" name="Resposta"/> Alternativa 1  </label><br/>
+						<label id="Alternativa2"> <input type="radio" name="Resposta"/> Alternativa 2  </label><br/>
+						<label id="Alternativa3"> <input type="radio" name="Resposta"/> Alternativa 3  </label><br/>
+						<label id="Alternativa4"> <input type="radio" name="Resposta"/> Alternativa 4  </label><br/>
+						<label id="Alternativa5"> <input type="radio" name="Resposta"/> Alternativa 5  </label><br/>
+						<br/><br/><br/><br/><br/>
+
+					</div>
+
+					<div type="submit" onmousedown="AnimacaoBotaoInset()" onmouseup="AnimacaoBotaoOutset()" id="Botao" onclick="Enviar()"> Iniciar Quiz! </div>
+						
+					<p id="AcertoTexto">Acertos: 0</p>
+					<p id="ProgressoTexto">Progresso: 0 de 10</p>
+					<div id="Contorno"> <div id="Barra"> </div> </div>
+					
+
+				<br/><br/><br/><br/>
+			</form>
+
+
+
+			<br/>
+			
+		</center>
+	</body>
+</html>
